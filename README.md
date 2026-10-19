@@ -9,7 +9,7 @@
 Aplicación web diseñada para la supervisión y control microclimático de un invernadero de rosas de exportación. El sistema captura la telemetría ambiental, evalúa reglas agronómicas y genera diagnósticos en lenguaje natural oral y escrito mediante servicios de computación cognitiva (Web Speech API).
 
 ### 🚀 Demostración en Vivo
-* **Web App:** `https://sites.google.com/view/ingjhonreales/`
+* **Web App:** `[https://sites.google.com/view/ingjhonreales/](https://sites.google.com/view/ingjhonreales/)`
 
 ---
 
