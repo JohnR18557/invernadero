@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Control de Variables del Invernadero - Rosas de Exportación</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 30px; background-color: #f0f2f5; }
+    .container { background-color: #ffffff; padding: 25px 30px; border-radius: 8px; max-width: 650px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    h2 { color: #1e3d59; text-align: center; border-bottom: 2px solid #17b978; padding-bottom: 10px; margin-top: 0; }
+    .campo { margin-bottom: 16px; }
+    label { display: block; margin-bottom: 6px; font-weight: 600; color: #333333; }
+    input[type="text"], select, textarea { width: 100%; padding: 10px; border: 1px solid #cccccc; border-radius: 4px; box-sizing: border-box; font-size: 14px; }
+    input[readonly], textarea[readonly] { background-color: #f9f9f9; cursor: not-allowed; }
+    .botones { display: flex; gap: 12px; margin-top: 20px; }
+    button { flex: 1; padding: 12px; border: none; border-radius: 4px; font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.2s; color: #ffffff; }
+    .btn-leer { background-color: #007bff; }
+    .btn-leer:hover { background-color: #0056b3; }
+    .btn-voz { background-color: #28a745; }
+    .btn-voz:hover { background-color: #1e7e34; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>CONTROL DE VARIABLES DEL INVERNADERO</h2>
+
+    <div class="campo">
+      <label for="temp">Temperatura (°C):</label>
+      <input type="text" id="f_temp" readonly placeholder="Pendiente de lectura...">
+    </div>
+
+    <div class="campo">
+      <label for="hum">Humedad (%):</label>
+      <input type="text" id="f_hume" readonly placeholder="Pendiente de lectura...">
+    </div>
+
+    <!-- Nueva variable solicitada por la empresa: pH del Suelo -->
+    <div class="campo">
+      <label for="ph">pH del Suelo:</label>
+      <input type="text" id="f_ph" readonly placeholder="Pendiente de lectura...">
+    </div>
+
+    <!-- Selector de idioma: Español e Inglés -->
+    <div class="campo">
+      <label for="lang">Idioma del Reporte:</label>
+      <select id="lang" onchange="cambiarIdioma()">
+        <option value="es" selected>Español (es-ES)</option>
+        <option value="en">English (en-US)</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="reporte">Reporte escrito en lenguaje natural:</label>
+      <textarea id="reporte" rows="3" readonly></textarea>
+    </div>
+
+    <div class="botones">
+      <button class="btn-leer" onclick="leerSensores()">1. Leer datos de la red de sensores</button>
+      <button class="btn-voz" onclick="generarReporteHablado()">2. Generar reporte hablado</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
